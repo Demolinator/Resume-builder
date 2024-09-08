@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script defer src="./dist/app.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+      <!-- Navbar -->
+    <nav class="navbar">
+      Resume Generator
+    </nav>
+
+    <!-- main content of the page -->
+    <main>
+    <div class="container">
+      <div class="header editable-container">
+        <div class="full-name">
+          <span class="first-name" contenteditable="false">John</span>
+          <span class="last-name" contenteditable="false">Doe</span>
+        </div>
+        <div class="contact-info">
+          <span class="email">Email: </span>
+          <span class="email-val" contenteditable="false"
+            >john.doe@gmail.com</span
+          >
+          <span class="separator"></span>
+          <span class="phone">Phone: </span>
+          <span class="phone-val" contenteditable="false">111-222-3333</span>
+        </div>
+        <div class="about">
+          <span class="position" contenteditable="false"
+            >Front-End Developer</span
+          >
+          <span class="desc" contenteditable="false">
+            I am a front-end developer with more than 3 years of experience
+            writing HTML, CSS, and JS. I'm motivated, result-focused, and
+            seeking a successful team-oriented company with an opportunity to
+            grow.
+          </span>
+        </div>
+      </div>
+      <div class="details">
+        <div class="section editable-container">
+          <div class="section__title">Experience</div>
+          <button class="hide-button">Hide</button>
+          <div class="section__list">
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name" contenteditable="false">KlowdBox</div>
+                <div class="addr" contenteditable="false">
+                  San Francisco, CA
+                </div>
+                <div class="duration" contenteditable="false">
+                  Jan 2011 - Feb 2015
+                </div>
+              </div>
+              <div class="right">
+                <div class="name" contenteditable="false">
+                  Front-End Developer
+                </div>
+                <div class="desc" contenteditable="false">
+                  Worked on various front-end projects, including HTML, CSS, and
+                  JavaScript implementations.
+                </div>
+              </div>
+            </div>
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name" contenteditable="false">Akount</div>
+                <div class="addr" contenteditable="false">Santa Monica, CA</div>
+                <div class="duration" contenteditable="false">
+                  Jan 2011 - Feb 2015
+                </div>
+              </div>
+              <div class="right">
+                <div class="name" contenteditable="false">
+                  Front-End Developer
+                </div>
+                <div class="desc" contenteditable="false">
+                  Developed and maintained web applications using front-end
+                  technologies.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section editable-container">
+          <div class="section__title">Education</div>
+          <button class="hide-button">Hide</button>
+          <div class="section__list">
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name" contenteditable="false">
+                  Sample Institute of Technology
+                </div>
+                <div class="addr" contenteditable="false">
+                  San Francisco, CA
+                </div>
+                <div class="duration" contenteditable="false">
+                  Jan 2011 - Feb 2015
+                </div>
+              </div>
+              <div class="right">
+                <div class="name" contenteditable="false">
+                  Bachelor of Science in Computer Science
+                </div>
+                <div class="desc" contenteditable="false">
+                  Specialized in front-end development and web technologies.
+                </div>
+              </div>
+            </div>
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name" contenteditable="false">Akount</div>
+                <div class="addr" contenteditable="false">Santa Monica, CA</div>
+                <div class="duration" contenteditable="false">
+                  Jan 2011 - Feb 2015
+                </div>
+              </div>
+              <div class="right">
+                <div class="name" contenteditable="false">
+                  Certification in Front-End Development
+                </div>
+                <div class="desc" contenteditable="false">
+                  Completed a certification course in front-end technologies.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section editable-container">
+          <div class="section__title">Projects</div>
+          <button class="hide-button">Hide</button>
+          <div class="section__list">
+            <div class="section__list-item">
+              <div class="name" contenteditable="false">DSP</div>
+              <div class="text" contenteditable="false">
+                Developed a comprehensive front-end application using HTML, CSS,
+                and JavaScript. Achieved a highly interactive user interface
+                with a focus on usability and performance.
+              </div>
+            </div>
+            <div class="section__list-item">
+              <div class="name" contenteditable="false">Another Project</div>
+              <div class="text" contenteditable="false">
+                Worked on a project involving dynamic web content and user
+                interaction. Implemented responsive design techniques and
+                improved user experience. <a href="/login">Link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section editable-container">
+          <div class="section__title">Skills</div>
+          <button class="hide-button">Hide</button>
+          <div class="skills">
+            <div class="skills__item">
+              <div class="left">
+                <div class="name" contenteditable="false">JavaScript</div>
+              </div>
+              <div class="right">
+                <input id="ck1" type="checkbox" checked />
+                <label for="ck1"></label>
+                <input id="ck2" type="checkbox" checked />
+                <label for="ck2"></label>
+                <input id="ck3" type="checkbox" />
+                <label for="ck3"></label>
+                <input id="ck4" type="checkbox" />
+                <label for="ck4"></label>
+                <input id="ck5" type="checkbox" />
+                <label for="ck5"></label>
+              </div>
+            </div>
+            <div class="skills__item">
+              <div class="left">
+                <div class="name" contenteditable="false">CSS</div>
+              </div>
+              <div class="right">
+                <input id="ck6" type="checkbox" checked />
+                <label for="ck6"></label>
+                <input id="ck7" type="checkbox" checked />
+                <label for="ck7"></label>
+                <input id="ck8" type="checkbox" />
+                <label for="ck8"></label>
+                <input id="ck9" type="checkbox" />
+                <label for="ck9"></label>
+                <input id="ck10" type="checkbox" />
+                <label for="ck10"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section editable-container">
+          <div class="section__title">Interests</div>
+          <button class="hide-button">Hide</button>
+          <div class="section__list">
+            <div class="section__list-item interests" contenteditable="false">
+              Football, Programming
+            </div>
+          </div>
+        </div>
+        <div class="section editable-container">
+          <div class="section__title">Certifications</div>
+          <button class="hide-button">Hide</button>
+          <div class="section__list">
+            <div class="section__list-item certifications" contenteditable="false">
+              Certified Front-End Developer, JavaScript Advanced Certification
+            </div>
+          </div>
+        </div>
+        <div class="section editable-container">
+          <div class="section__title">Languages</div>
+          <button class="hide-button">Hide</button>
+          <div class="section__list">
+            <div class="section__list-item languages" contenteditable="false">
+              English, Spanish
+            </div>
+          </div>
+        </div>
+        <div class="section editable-container">
+          <div class="section__title">References</div>
+          <button class="hide-button">Hide</button>
+          <div class="section__list">
+            <div class="section__list-item references" contenteditable="false">
+              Available upon request
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="edit-controls">
+      <button class="edit-button">Edit</button>
+      <button class="save-button">Save</button>
+      <button class="reset-button">Reset</button>
+      <button class="download-button">Download Resume</button>
+    </div>
+
+    <!-- Edit options container -->
+    <div class="edit-options" style="display: none">
+      <button class="edit-direct-button">Edit Directly</button>
+      <button class="edit-form-button">Edit by Form</button>
+    </div>
+
+    <!-- Edit by Form -->
+    <div class="edit-form" style="display: none">
+      <form id="resume-form">
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full-name" /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" /><br />
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" /><br />
+
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" /><br />
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea><br />
+
+        <!-- Experience Section -->
+        <label for="experience-company-1">Experience Company 1:</label>
+        <input
+          type="text"
+          id="experience-company-1"
+          name="experience-company-1"
+        /><br />
+
+        <label for="experience-address-1">Experience Address 1:</label>
+        <input
+          type="text"
+          id="experience-address-1"
+          name="experience-address-1"
+        /><br />
+
+        <label for="experience-duration-1">Experience Duration 1:</label>
+        <input
+          type="text"
+          id="experience-duration-1"
+          name="experience-duration-1"
+        /><br />
+
+        <label for="experience-role-1">Experience Role 1:</label>
+        <input
+          type="text"
+          id="experience-role-1"
+          name="experience-role-1"
+        /><br />
+
+        <label for="experience-desc-1">Experience Description 1:</label>
+        <textarea id="experience-desc-1" name="experience-desc-1"></textarea
+        ><br />
+
+        <!-- Repeat for other experience entries as needed -->
+
+        <!-- Education Section -->
+        <label for="education-institution-1">Education Institution 1:</label>
+        <input
+          type="text"
+          id="education-institution-1"
+          name="education-institution-1"
+        /><br />
+
+        <label for="education-address-1">Education Address 1:</label>
+        <input
+          type="text"
+          id="education-address-1"
+          name="education-address-1"
+        /><br />
+
+        <label for="education-duration-1">Education Duration 1:</label>
+        <input
+          type="text"
+          id="education-duration-1"
+          name="education-duration-1"
+        /><br />
+
+        <label for="education-degree-1">Education Degree 1:</label>
+        <input
+          type="text"
+          id="education-degree-1"
+          name="education-degree-1"
+        /><br />
+
+        <label for="education-desc-1">Education Description 1:</label>
+        <textarea id="education-desc-1" name="education-desc-1"></textarea
+        ><br />
+
+        <!-- Repeat for other education entries as needed -->
+
+        <!-- Projects Section -->
+        <label for="project-name-1">Project Name 1:</label>
+        <input type="text" id="project-name-1" name="project-name-1" /><br />
+
+        <label for="project-desc-1">Project Description 1:</label>
+        <textarea id="project-desc-1" name="project-desc-1"></textarea><br />
+
+        <!-- Repeat for other projects as needed -->
+
+        <!-- Skills Section -->
+        <label for="skills-js">JavaScript Skill Level:</label>
+        <input
+          type="range"
+          id="skills-js"
+          name="skills-js"
+          min="0"
+          max="100"
+        /><br />
+
+        <label for="skills-css">CSS Skill Level:</label>
+        <input
+          type="range"
+          id="skills-css"
+          name="skills-css"
+          min="0"
+          max="100"
+        /><br />
+
+        <!-- Repeat for other skills as needed -->
+
+        <!-- Interests Section -->
+        <label for="interests">Interests:</label>
+        <textarea id="interests" name="interests"></textarea><br />
+
+        <!-- Certifications Section -->
+        <label for="certifications">Certifications:</label>
+        <textarea id="certifications" name="certifications"></textarea><br />
+
+        <!-- Languages Section -->
+        <label for="languages">Languages:</label>
+        <textarea id="languages" name="languages"></textarea><br />
+
+        <!-- References Section -->
+        <label for="references">References:</label>
+        <textarea id="references" name="references"></textarea><br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer of the web page -->
+  <footer class="footer">
+    <p>&copy; 2024 Talal Ahmed Resume builder. All rights reserved.</p>
+  </footer>
+  </body>
+</html>
